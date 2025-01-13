@@ -1,134 +1,169 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>طريقة التخسيس المثالية</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>رحلة التخسيس في المنزل</title>
+    
+    <!-- إضافة مكتبة AOS (للتحريك عند التمرير) -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    
+    <!-- إضافة خط مخصص (Google Fonts) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
+        /* إعدادات الخطوط والألوان */
         body {
-            font-family: 'Arial', sans-serif;
-            background: radial-gradient(circle, rgba(0, 212, 255, 1) 0%, rgba(0, 255, 198, 1) 100%);
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            color: #fff;
-            overflow: hidden;
+            background: #e0f7fa;
+            color: #333;
+            overflow-x: hidden;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 30px;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        h1 {
-            text-align: center;
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: #00ffd4;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .section-title {
-            font-size: 2rem;
-            margin: 20px 0;
-            color: #fff;
-            text-decoration: underline;
-        }
-
-        .article {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: #dcdcdc;
-            margin-bottom: 30px;
-        }
-
-        .image-container {
+        /* تصميم الهيدر */
+        header {
+            position: relative;
+            height: 100vh;
+            background: url('https://images.unsplash.com/photo-1542327111-7104595e44c9?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjUyOXwwfDF8c2VhY3J8NXx8cGVvcGxlfGVufDB8fHx8fDE2Nzg1NDAzMzc&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center fixed;
+            background-size: cover;
             display: flex;
             justify-content: center;
-            margin: 20px 0;
-        }
-
-        .image-container img {
-            max-width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-        }
-
-        .tip-box {
-            background-color: #00ffc6;
+            align-items: center;
+            text-align: center;
+            color: white;
             padding: 20px;
+        }
+
+        header h1 {
+            font-size: 4em;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            margin: 0;
+            animation: fadeIn 2s ease-out;
+        }
+
+        /* تأثيرات عند التمرير */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* تصميم المحتوى */
+        .content {
+            padding: 40px;
+            background: white;
             border-radius: 10px;
-            margin: 20px 0;
-            font-size: 1.1rem;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: -50px;
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .content h2 {
+            color: #00796b;
+            font-size: 2.5em;
+            margin-top: 0;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-top: 10px;
+            color: #555;
         }
 
         .cta {
-            background-color: #00ffd4;
-            text-align: center;
+            background-color: #00796b;
+            color: white;
             padding: 15px;
-            border-radius: 10px;
-            margin-top: 30px;
+            text-align: center;
+            border-radius: 8px;
+            font-size: 1.2em;
             cursor: pointer;
-            transition: 0.3s;
-            font-size: 1.5rem;
+            margin-top: 30px;
+            transition: background-color 0.3s ease;
         }
 
         .cta:hover {
-            background-color: #00d4ff;
-            transform: scale(1.05);
+            background-color: #004d40;
         }
 
-        footer {
+        .footer {
             text-align: center;
-            margin-top: 50px;
-            font-size: 1rem;
-            color: #aaa;
+            padding: 20px;
+            background-color: #004d40;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            font-size: 1em;
+        }
+
+        /* تصميم الـ Button الخاص باسمك */
+        .name-btn {
+            background-color: #FF5722;
+            padding: 10px 20px;
+            color: white;
+            font-size: 1.5em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .name-btn:hover {
+            background-color: #E64A19;
         }
 
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>طريقة التخسيس المثالية في المنزل</h1>
 
-        <div class="article">
-            <p>يعتبر فقدان الوزن والتخسيس في المنزل من الأمور التي يمكن تحقيقها بكل سهولة إذا تم اتباع النصائح الصحيحة. لا تحتاج إلى صالات الرياضة أو المعدات باهظة الثمن، بل يمكنك الحصول على نتائج رائعة باستخدام الأساليب التالية:</p>
+<header>
+    <h1 data-aos="fade-down">رحلة التخسيس المثالية مع إبراهيم</h1>
+</header>
 
-            <h2 class="section-title">1. تنظيم الوجبات</h2>
-            <p>التغذية السليمة هي الخطوة الأولى نحو فقدان الوزن. احرص على تناول وجبات صحية ومتوازنة تحتوي على جميع العناصر الغذائية الأساسية. ركز على الأطعمة الطبيعية مثل الخضروات، البروتينات الخفيفة (مثل الدجاج أو السمك)، والألياف.</p>
-            
-            <div class="image-container">
-                <img src="https://via.placeholder.com/800x400" alt="طعام صحي">
-            </div>
+<div class="content" data-aos="fade-up">
+    <h2>التغذية السليمة</h2>
+    <p>من الخطوات الأساسية للتخسيس هي تناول وجبات غذائية متوازنة. تأكد من تضمين البروتينات، الألياف، الخضروات والفواكه بشكل يومي. الغذاء المتوازن يعزز عملية الأيض ويساعد على حرق الدهون بشكل أكثر فعالية.</p>
 
-            <h2 class="section-title">2. التمارين الرياضية</h2>
-            <p>ممارسة التمارين الرياضية اليومية في المنزل هي الطريقة الأمثل لحرق الدهون وتحسين اللياقة البدنية. حاول تخصيص 30 دقيقة يوميًا لتمارين مثل القفز، تمارين الضغط، والقرفصاء (squats) التي تقوي العضلات وتحرق الدهون.</p>
-            
-            <h2 class="section-title">3. شرب الماء</h2>
-            <p>شرب كمية كافية من الماء هو أحد أهم العوامل في التخسيس. يساعد الماء في تحسين الهضم، تقليل الشهية، وزيادة معدل الأيض. حاول شرب من 8 إلى 10 أكواب من الماء يوميًا.</p>
+    <h2>ممارسة الرياضة بانتظام</h2>
+    <p>تساعد التمارين الرياضية على تحفيز الجسم لحرق المزيد من السعرات الحرارية. يمكن ممارسة تمارين بسيطة في المنزل مثل المشي أو اليوغا. حافظ على التمارين لمدة 30 دقيقة يوميًا لنتائج أفضل.</p>
 
-            <div class="tip-box">
-                <p><strong>نصيحة مهمة:</strong> تجنب المشروبات الغازية والمشروبات المحلاة. استبدلها بالماء أو المشروبات الطبيعية مثل الشاي الأخضر.</p>
-            </div>
+    <h2>شرب الماء بانتظام</h2>
+    <p>شرب كمية كافية من الماء لا يساعد فقط في الهضم بل أيضًا يعزز من قدرة الجسم على التخلص من السموم. حاول شرب 8 أكواب من الماء يوميًا لزيادة التمثيل الغذائي.</p>
 
-            <h2 class="section-title">4. الحصول على قسط كافٍ من النوم</h2>
-            <p>النوم الجيد والمريح لا يقل أهمية عن الغذاء والتمارين. يساعد النوم على تعزيز قدرة الجسم على حرق الدهون وتجديد الخلايا. احرص على النوم من 7 إلى 8 ساعات كل ليلة.</p>
+    <h2>النوم الجيد</h2>
+    <p>النوم العميق يساعد الجسم على الراحة والتعافي بعد يوم حافل. تأكد من الحصول على 7-8 ساعات من النوم لتفعيل عمليات حرق الدهون في الجسم.</p>
 
-            <h2 class="section-title">5. التحكم في التوتر</h2>
-            <p>التوتر يمكن أن يؤدي إلى زيادة الوزن بسبب إفراز هرمونات مثل الكورتيزول. حاول تقليل التوتر عن طريق ممارسة تمارين الاسترخاء مثل التأمل أو اليوغا.</p>
-
-            <div class="cta">
-                <p>ابدأ الآن في تحسين نمط حياتك وتخسيس وزنك بطريقة صحية!</p>
-            </div>
-        </div>
+    <div class="cta" data-aos="zoom-in">
+        <p>ابدأ الآن رحلتك نحو الجسم المثالي!</p>
     </div>
+</div>
 
-    <footer>
-        <p>© 2025 جميع الحقوق محفوظة | إبراهيم</p>
-    </footer>
+<!-- زر لعرض اسمك بشكل مميز -->
+<div style="text-align: center;">
+    <button class="name-btn" data-aos="fade-up">إبراهيم</button>
+</div>
+
+<div class="footer">
+    <p>تم تطوير هذه الصفحة بواسطة إبراهيم - جميع الحقوق محفوظة &copy; 2025</p>
+</div>
+
+<!-- إضافة مكتبة AOS الخاصة بالحركة -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1200,  // مدة التأثير
+    });
+</script>
+
 </body>
 </html>
